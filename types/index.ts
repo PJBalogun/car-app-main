@@ -1,4 +1,5 @@
 import { MouseEventHandler } from "react";
+import { manufacturers } from './../constants/index';
 
 export interface CarProps {
 	city_mpg: number;
@@ -55,6 +56,7 @@ export interface OptionProps {
 export interface CustomFilterProps {
 	title: string;
 	options: OptionProps[];
+	setFilter: any;
 }
 
 export interface ShowMoreProps {
@@ -62,10 +64,18 @@ export interface ShowMoreProps {
 	isNext: boolean;
 }
 
+// export interface SearchManuFacturerProps {
+// 	manufacturer : string;
+// 	setManuFacturer: (manufacturer: string) => void;
+// }
+
 export interface SearchManuFacturerProps {
-	manufacturer: string;
+	selected?: string;
+	setSelected?: any;
+	manufacturer : string;
 	setManuFacturer: (manufacturer: string) => void;
 }
+
 export interface FilterProps {
 	manufacturer?: string;
 	year?: number;
