@@ -5,9 +5,12 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import SearchManufacturer from "./SearchManufacturer";
 
-type SearchProps = {};
+type SearchProps = {
+	setManufacturer : React.Dispatch<React.SetStateAction<string>>
+	setModel: React.Dispatch<React.SetStateAction<string>>
+};
 
-const SearchBar = ({ setManufacturer, setModel }) => {
+const SearchBar = ({ setManufacturer, setModel } : SearchProps) => {
 	const [searchManufacturer, setSearchManuFacturer] = useState("");
 	const [searchModel, setSearchModel] = useState("");
 	const router = useRouter();
